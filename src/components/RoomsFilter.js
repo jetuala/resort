@@ -23,6 +23,11 @@ export default function RoomsFilter({rooms}) {
         return <option value={item} key={index}>{item}</option>
     })
 
+    let people = getUnique(rooms, 'capacity');
+    people = people.map((item, index) => {
+        return <option value={item} key={index}>{item}</option>
+    })
+
     return (
         <section className="filter-container">
             <Title title="search rooms" />
@@ -33,6 +38,17 @@ export default function RoomsFilter({rooms}) {
                     <select name="type" id="type" value={type} className="form-control" onChange={handleChange}>
                         {/* NAME is passed from context.js handleChange */}
                         {types}
+                    </select>
+                </div>
+                {/* End of select type*/}
+            </form>
+            <form className="filter-form">
+                {/* Select number of occupants*/}
+                <div className="form-group">
+                    <label htmlFor="capacity">Guests</label>
+                    <select name="capacity" id="capacity" value={capacity} className="form-control" onChange={handleChange}>
+                        {/* NAME is passed from context.js handleChange */}
+                        {people}
                     </select>
                 </div>
                 {/* End of select type*/}

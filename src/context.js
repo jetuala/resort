@@ -73,10 +73,21 @@ class RoomProvider extends Component {
     filterRooms = () => {
         let { rooms, type, capacity, price, minSize, maxSize, breakfast, pets } = this.state;
         // destructuring from state because this is a callback function (only run under hundleChange)
+        // all rooms
         let tempRooms = [...rooms];
+        // transform the capacity value from string to number
+        capacity = parseInt(capacity);
+
+        // filter by type
         if (type !== 'all') { 
             tempRooms = tempRooms.filter( room => room.type === type)
         }
+
+        // filter by capacity
+        if (capacity !== 1) {
+            tempRooms = tempRooms.filter( room => room.capacity >= capacity)
+        }
+
         this.setState({
             sortedRooms: tempRooms
         })
