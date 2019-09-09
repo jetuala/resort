@@ -70,7 +70,7 @@ export default class SingleRoom extends Component {
                                     capacity > 1 ? `${capacity} people`: `${capacity} person` 
                                 }
                             </h6>
-                            <h6>{pets?"pets allowed":"no pets allowed"}</h6>
+                            <h6>{pets?"Chocobos allowed":"no chocobos allowed"}</h6>
                             <h6>{breakfast && "free breakfast included"}</h6>
                             {/* AND operator in above line only renders if condition is true */}
                         </article>
