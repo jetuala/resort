@@ -52,7 +52,7 @@ export default function RoomsFilter({rooms}) {
                 {/* End of select type*/}
                 {/* Select room price */}
                 <div className="form-group">
-                    <label htmlFor="price">Room Price {price} gil</label>
+                    <label htmlFor="price">Price {price} gil</label>
                     <input type="range" name="price" min={minPrice} max={maxPrice} id="price" value={price} onChange={handleChange} className="form-control" />
                 </div>
                 {/* End of room price */}
@@ -86,7 +86,7 @@ export default function RoomsFilter({rooms}) {
                             checked={pets} 
                             onChange={handleChange} 
                         />
-                        <label htmlFor="pets">Pets</label>
+                        <label htmlFor="pets">Chocobos</label>
                     </div>
                 </div>
                 {/* end of checkboxes */}

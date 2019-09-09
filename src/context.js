@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import items from './data';
+// import items from './data';
+import client from './contentful';
 
 const RoomContext = React.createContext();
 
@@ -20,31 +21,57 @@ class RoomProvider extends Component {
         breakfast: false,
         pets: false
     };
-    // getData {}
+    // getData 
+
+    getData = async () => {
+        try {
+            let response = await client.getEntries({
+                content_type: 'beachResortRooms', 
+                order: 'fields.price,fields.capacity'
+            });
+            let rooms = this.formatData(response.items);
+            let featuredRooms = rooms.filter(room => room.featured === true);
+            let maxPrice = Math.max(...rooms.map(item => item.price));
+            let maxSize = Math.max(...rooms.map(item => item.size));
+            this.setState({
+                    rooms, 
+                    featuredRooms,
+                    sortedRooms: rooms,
+                    loading: false,
+                    price: maxPrice,
+                    maxPrice,
+                    maxSize
+            });
+            // console.log(rooms[0].fields.images[0].fields.file.url);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     componentDidMount() {
         // Makes sure all data is loaded before room component is rendered
-        let rooms = this.formatData(items);
-        let featuredRooms = rooms.filter(room => 
-            room.featured === true);
-        let maxPrice = Math.max(...rooms.map(item => item.price));
-        let maxSize = Math.max(...rooms.map(item => item.size));
-        this.setState({
-                rooms, 
-                featuredRooms,
-                sortedRooms: rooms,
-                loading: false,
-                price: maxPrice,
-                maxPrice,
-                maxSize
-        });
+        this.getData();
+        // let rooms = this.formatData(items);
+        // let featuredRooms = rooms.filter(room => 
+        //     room.featured === true);
+        // let maxPrice = Math.max(...rooms.map(item => item.price));
+        // let maxSize = Math.max(...rooms.map(item => item.size));
+        // this.setState({
+        //         rooms, 
+        //         featuredRooms,
+        //         sortedRooms: rooms,
+        //         loading: false,
+        //         price: maxPrice,
+        //         maxPrice,
+        //         maxSize
+        // });
     }
 
     // Destructures ("restructures" in my terms!) data from local (Contentful)-structured) data to object with one layer
     formatData(items) {
         let tempItems = items.map(item => {
             let id = item.sys.id;
-            let images = item.fields.images.map(image => 
-                image.fields.file.url);
+            let images = item.fields.images.map(image => image.fields.file.url);
             let room = {...item.fields, images, id};
             return room;
         });
@@ -62,7 +89,7 @@ class RoomProvider extends Component {
 
     handleChange = event => {
         const target = event.target;
-        const value = event.type === 'checkbox' ? target.checked : target.value;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = event.target.name;
         this.setState({
             [name]: value
@@ -93,10 +120,17 @@ class RoomProvider extends Component {
         tempRooms = tempRooms.filter( room => room.price <= price);
 
         // filter by size
-        tempRooms = tempRooms.filter ( room => room.size >= minSize && room.size <= maxSize);
+        tempRooms = tempRooms.filter( room => room.size >= minSize && room.size <= maxSize);
 
         // filter by breakfast
-        tempRooms = tempRooms.filter ( room => room.breakfast === true )
+        if (breakfast) {
+            tempRooms = tempRooms.filter( room => room.breakfast === true );
+        }
+
+        // filter by pets
+        if (pets) {
+            tempRooms = tempRooms.filter( room => room.pets === true );
+        }
 
         this.setState({
             sortedRooms: tempRooms
@@ -124,7 +158,7 @@ export function higherOrderComponentRoomConsumer(Component) {
     // Think CONNECT from Redux...?
     return function ConsumerWrapper(props) {
         return <RoomConsumer>
-            {value => <Component {...props}context={value}>
+            {value => <Component {...props} context={value}>
             </Component>}
         </RoomConsumer>
     }
