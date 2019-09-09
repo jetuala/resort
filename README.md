@@ -4,27 +4,14 @@ I followed this tutorial (https://youtu.be/LXJOvkVYQqA, thanks John Smilga!) on 
 
 1. Setting up react project using npx as opposed to npm
 2. Using React Context vs. Redux
-  a. App size is small so I'm using Context instead of Redux
-  b. Passing down context vs. props
-  c. Using Providers and Consumers
-  d. Use :slug in future project
-  e. All components re-render with every state change
-3. Error handling (No such room found) and loading 
+3. Loading and Error handling (No such room found)
 4. Destructuring in ES6
-  a. const {getRoom} = this.context
-  b. spread operator
-5. Using Higher Order Components vs Context Consumers (although tbh I still don't quite this LOL)
+5. Using Higher Order Components vs Context Consumers (although tbh I still don't quite get this LOL)
 6. Styled Components
 7. Continuing to learn JS functional programming
-  a. map, reduce, filter
-  b. SET ONLY USES UNIQUE VALUES!!!
 8. React DevTools Chrome Extension
-9. Contentful
-  a. Setting up a "space" (database)
-  b. Entering data into space
-10. Netlify
-  a. Setting up environmental variables
-  b. Deploying site from Github
+9. Setting up spaces (databases) in Contentful
+10. Deploying my Github repository to Netlify
   
 I'll be presenting this project this weekend at the monthly Las Vegas meet-up of freeCodeCamp! Wish me luck!
 
