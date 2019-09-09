@@ -1,3 +1,22 @@
+Welcome!
+
+I followed this tutorial (https://youtu.be/LXJOvkVYQqA, thanks John Smilga!) on building a hotel reservation webapp using React, Contentful, and Netlify! I learned a ton of stuff, including but not limited to:
+
+1. Setting up react project using npx as opposed to npm
+2. Using React Context vs. Redux
+3. Loading and Error handling (No such room found)
+4. Destructuring in ES6
+5. Using Higher Order Components vs Context Consumers (although tbh I still don't quite get this LOL)
+6. Styled Components
+7. Continuing to learn JS functional programming
+8. React DevTools Chrome Extension
+9. Setting up spaces (databases) in Contentful
+10. Deploying my Github repository to Netlify
+  
+I'll be presenting this project this weekend at the monthly Las Vegas meet-up of freeCodeCamp! Wish me luck!
+
+--**--**--**--
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
