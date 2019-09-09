@@ -42,7 +42,6 @@ class RoomProvider extends Component {
                     maxPrice,
                     maxSize
             });
-            // console.log(rooms[0].fields.images[0].fields.file.url);
         } catch (error) {
             console.log(error)
         }
@@ -94,12 +93,11 @@ class RoomProvider extends Component {
         this.setState({
             [name]: value
         }, this.filterRooms)
-        // console.log("context.js event type, name & value: " + type, name, value);
     };
 
     filterRooms = () => {
         let { rooms, type, capacity, price, minSize, maxSize, breakfast, pets } = this.state;
-        // destructuring from state because this is a callback function (only run under hundleChange)
+        // destructuring from state because this is a callback under handleChange
         // all rooms
         let tempRooms = [...rooms];
         // transform the capacity & price values from string to number

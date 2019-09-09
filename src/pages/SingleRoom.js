@@ -17,10 +17,6 @@ export default class SingleRoom extends Component {
 
     static contextType = RoomContext;
 
-    // componentDidMount() {
-
-    // }
-
     render() {
         const {getRoom} = this.context;
         const room = getRoom(this.state.slug);
