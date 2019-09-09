@@ -15,7 +15,7 @@ I followed this tutorial (https://youtu.be/LXJOvkVYQqA, thanks John Smilga!) on 
   
 I'll be presenting this project this weekend at the monthly Las Vegas meet-up of freeCodeCamp! Wish me luck!
 
---**--**--**--
+----------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
