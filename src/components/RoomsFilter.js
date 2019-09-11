@@ -3,6 +3,7 @@ import { useContext } from 'react';
 // REACT HOOK! Use this to bypass passing props!!
 import { RoomContext } from '../context';
 import Title from '../components/Title';
+import DatePicker from 'react-date-picker';
 
 // This function gets all unique values from the "type" for room options
 const getUnique = (items, value) => {
@@ -13,7 +14,7 @@ const getUnique = (items, value) => {
 export default function RoomsFilter({rooms}) {
     const context = useContext(RoomContext);
     const {
-        handleChange, type, capacity, price, minPrice, maxPrice, minSize, maxSize, breakfast, pets
+        handleChange, handleCIChange, handleCOChange, ciDate, coDate, type, capacity, price, minPrice, maxPrice, minSize, maxSize, breakfast, pets
     } = context;
     let types = getUnique(rooms,'type');
     // This variable adds 'all' option and uses SPREAD operator
@@ -31,7 +32,17 @@ export default function RoomsFilter({rooms}) {
     return (
         <section className="filter-container">
             <Title title="search rooms" />
+
             <form className="filter-form">
+                {/* Check-in and check-out calendar widgets */}
+                <div className="form-group">
+                    <label htmlFor="checkIn">Check-in Date</label>
+                    <DatePicker name="checkIn" className="form-control" clearIcon={null} value={ciDate} onChange={handleCIChange} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="checkOut">Check-out Date</label>
+                    <DatePicker name="checkOut" className="form-control" clearIcon={null} value={coDate} onChange={handleCOChange} />
+                </div>
                 {/* Select type of room*/}
                 <div className="form-group">
                     <label htmlFor="type">room type</label>
@@ -41,6 +52,8 @@ export default function RoomsFilter({rooms}) {
                     </select>
                 </div>
                 {/* End of select type*/}
+            </form>
+            <form className="filter-form">
                 {/* Select number of occupants*/}
                 <div className="form-group">
                     <label htmlFor="capacity">Guests</label>

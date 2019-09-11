@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-// import items from './data';
+// import items from './data'; Getting data from Contentful now!!
 import client from './contentful';
+import moment from 'moment';
 
 const RoomContext = React.createContext();
+const date = new Date();
 
 class RoomProvider extends Component {
     state = {
         // All data gets passed down to here
+        ciDate: date,
+        coDate: moment(date).add(1, 'days').toDate(),
         rooms: [],
         sortedRooms: [],
         featuredRooms: [],
@@ -86,6 +90,31 @@ class RoomProvider extends Component {
         return room;
     }
 
+    handleCIChange = event => {
+        if (moment(event).isBefore(date)) {
+            alert("Check-in date cannot be sooner than today.");
+        } else if (moment(event).isBefore(moment(this.state.coDate), 'day')) {
+            this.setState({
+                ciDate: event
+            })
+        } else {
+            this.setState({
+                ciDate: event,
+                coDate: moment(event).add(1, 'days').toDate()
+            })
+        }
+    }
+
+    handleCOChange = event => {
+        if (moment(event).isBefore(moment(this.state.ciDate), 'day') || moment(event).isSame(moment(this.state.ciDate), 'day')) {
+            alert("Check-out date cannot be sooner than or equal to check-in date.");
+        } else {
+            this.setState({
+                coDate: event
+            })
+        }
+    }
+
     handleChange = event => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -140,6 +169,8 @@ class RoomProvider extends Component {
             <RoomContext.Provider value={{ 
                 ...this.state, 
                 getRoom: this.getRoom,
+                handleCIChange: this.handleCIChange,
+                handleCOChange: this.handleCOChange,
                 handleChange: this.handleChange
             }}>
                 {/* THIS IS SUPER IMPORTANT!!! */}
