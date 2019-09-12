@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer">
             <div className="footer-container">
                 <section className="footer-address footer-column">
-                    <h3 className="featuredFont"><em><a href="https://finalfantasy.fandom.com/wiki/Galdin_Quay" target="_blank">Galdin Quay Hotel & Resort</a></em></h3>
+                    <h3 className="featuredFont"><em><a href="https://finalfantasy.fandom.com/wiki/Galdin_Quay" target="_blank" rel="noopener noreferrer">Galdin Quay Hotel & Resort</a></em></h3>
                     <p>3000 Vannath Highway</p>
                     <p>Leide, Lucis 99232-1001</p>
                     <br />
@@ -30,10 +30,10 @@ export default function Footer() {
                     <div onClick={fakeClick}><FaYoutube /> Watch us on YouTube</div>
                 </section>
                 <section className="footer-awards footer-column">
-                    <a href="https://finalfantasy.fandom.com/wiki/Prompto_Argentum" target="_blank"><img src={Argentum} alt="Argentum Hotel Group" /></a>
-                    <a href="https://finalfantasy.fandom.com/wiki/7th_Heaven" target="_blank"><img src={SeventhHeaven} alt="Part of the 7th Heaven Restaurant Family" /></a>
-                    <a href="https://finalfantasy.fandom.com/wiki/Garlond_Ironworks" target="_blank"><img src={ Garlond } alt="Partners with Garlond Ironworks" /></a>
-                    <a href="https://finalfantasy.fandom.com/wiki/Shinra_Electric_Power_Company" target="_blank"><img src={ Shinra } alt="Sponsored by Shin-ra Electric Power Company" /></a>
+                    <a href="https://finalfantasy.fandom.com/wiki/Prompto_Argentum" target="_blank" rel="noopener noreferrer"><img src={Argentum} alt="Argentum Hotel Group" /></a>
+                    <a href="https://finalfantasy.fandom.com/wiki/7th_Heaven" target="_blank" rel="noopener noreferrer"><img src={SeventhHeaven} alt="Part of the 7th Heaven Restaurant Family" /></a>
+                    <a href="https://finalfantasy.fandom.com/wiki/Garlond_Ironworks" target="_blank" rel="noopener noreferrer"><img src={ Garlond } alt="Partners with Garlond Ironworks" /></a>
+                    <a href="https://finalfantasy.fandom.com/wiki/Shinra_Electric_Power_Company" target="_blank" rel="noopener noreferrer"><img src={ Shinra } alt="Sponsored by Shin-ra Electric Power Company" /></a>
                 </section>
             </div>
         </div>
