@@ -36,6 +36,9 @@ export default function Footer() {
                     <a href="https://finalfantasy.fandom.com/wiki/Shinra_Electric_Power_Company" target="_blank" rel="noopener noreferrer"><img src={ Shinra } alt="Sponsored by Shin-ra Electric Power Company" /></a>
                 </section>
             </div>
+            <div className="footer-disclaimer">
+                <p>This site is for educational purposes only. All intellectual property presented here related to the Final Fantasy franchise is © Square Enix Co., Ltd.</p>
+            </div>
         </footer>
     )
 }

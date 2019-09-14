@@ -8,12 +8,12 @@ export default function Video() {
         <div>
             <StyledVideo>
                 <div className="video">
-                    <YouTube id="video-YouTube" className="video-columns" modestbranding="1" videoId="FQcPlk5APAs" onReady={(event) => event.target.pauseVideo()} />
                     <div className="video-columns video-text">
-                        <Title title="More than a Vacation" />
-                        <p>Galdin Quay has everything you could possibly wish for in a tropical beach resort, and much more. There’s something to suit everyone, whether you’re visiting for business or pleasure, relaxation or stimulation.</p>
-                        <p>Relax by the white sand beach, learn to surf or scuba, fish in our nearby lagoon, and take an exercise class overlooking the ocean. There are even photo contests for budding photographers.</p>
+                        <Title title="Lorem ipsum dolor sit amet" />
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet.</p>
+                        <p>Tristique senectus et netus et malesuada fames ac. Sed turpis tincidunt id aliquet risus. Tortor pretium viverra suspendisse potenti. Ornare suspendisse sed nisi lacus sed viverra tellus in.</p>
                     </div>
+                    <YouTube id="video-YouTube" className="video-columns" modestbranding="1" videoId="FQcPlk5APAs" onReady={(event) => event.target.pauseVideo()} />
                 </div>
             </StyledVideo>
         </div>

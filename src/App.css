@@ -309,7 +309,7 @@ h6 {
 /* resort text */
 
 .resort {
-  padding: 5rem 0;
+  padding-top: 5rem;
 }
 
 .resort-center {
@@ -322,6 +322,10 @@ h6 {
 
 .resort-center p {
   margin: 1rem 0;
+}
+
+.resort-center img {
+  width: 100%;
 }
 
 /* Video component */
@@ -369,6 +373,12 @@ h6 {
 
   .video-columns {
     padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #video-YouTube {
+    width: 100%;
   }
 }
 
@@ -588,6 +598,43 @@ h6 {
 }
 /* end of rooms filter*/
 
+/* dining */
+
+.dining-center {
+  margin: 15px auto;
+  width: 70vw;
+}
+
+.dining-center p {
+  padding: 20px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.row img {
+  width: 100%;
+}
+  
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 1260px) {
+  .column {
+    flex: 1
+  }
+}
+
+/* end of dining */
+
 /* footer */
 .footer {
   background-color: var(--primaryColor);
@@ -612,8 +659,20 @@ h6 {
 
 .footer-awards {
   display: grid;
-  grid-template-columns: 200px 200px;
-  column-gap: 20px;
+  grid-template-columns: 175px 175px;
+  column-gap: 2px;
+}
+
+.footer-awards img {
+  height: 90%;
+  width: 90%;
+  padding: 10px;
+}
+
+.footer-disclaimer {
+  font-size: 0.7em;
+  text-align: center;
+  padding-bottom: 3px;
 }
 
 @media screen and (max-width: 776px) {

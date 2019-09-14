@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Title from './Title';
-import { FaHotTub, FaShower, FaShoppingBag, FaClinicMedical } from 'react-icons/fa';
+import { FaSwimmer, FaShower, FaShoppingBag, FaClinicMedical } from 'react-icons/fa';
 
 export default class SpaServices extends Component {
     state = { 
         services: [
             {
-                icon: <FaHotTub />,
+                icon: <FaSwimmer />,
                 title: "Lorem",
                 info: "Aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia."
             },

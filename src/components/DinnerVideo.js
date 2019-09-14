@@ -11,10 +11,10 @@ export default function DinnerVideo() {
                 <div className="video">
                     <YouTube id="video-YouTube" className="video-columns" modestbranding="1" videoId="D6zjRYWcP2o" onReady={(event) => event.target.pauseVideo()} />
                     <div className="video-columns video-text">
-                        <Title title="Your tastebuds will never thank you enough." />
-                        <p>The Mother of Pearl only serves the freshest seafood, top-grade meats, and highest quality ingredients. Your dining experience will be second-to-none, every time you visit -- guaranteed.</p>
+                        <Title title="Leo in vitae turpis massa sed elementum tempus." />
+                        <p>Sociis natoque penatibus et magnis dis parturient montes nascetur. Sociis natoque penatibus et magnis dis. Malesuada pellentesque elit eget gravida. Eu nisl nunc mi ipsum faucibus vitae.</p>
                         <br />
-                        <p>Indulge in the best dishes <a href="https://finalfantasy.fandom.com/wiki/Coctura_Arlund" target="_blank" rel="noopener noreferrer">Executive Chef Coctura Arlund</a> has to offer. Chef Arlund has received multiple awards from around the world, and she has brought her expertise to exclusively cater to Galdin Quay customers.</p>
+                        <p>Orci ac auctor augue mauris augue neque. Consequat ac felis donec et odio. Elementum facilisis leo vel fringilla est ullamcorper. Nunc sed id semper risus in hendrerit.</p>
                     </div>
                 </div>
             </StyledVideo>
