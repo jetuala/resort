@@ -11,7 +11,7 @@ export default function Footer() {
     }
 
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="footer-container">
                 <section className="footer-address footer-column">
                     <h3 className="featuredFont"><em><a href="https://finalfantasy.fandom.com/wiki/Galdin_Quay" target="_blank" rel="noopener noreferrer">Galdin Quay Hotel & Resort</a></em></h3>
@@ -36,6 +36,6 @@ export default function Footer() {
                     <a href="https://finalfantasy.fandom.com/wiki/Shinra_Electric_Power_Company" target="_blank" rel="noopener noreferrer"><img src={ Shinra } alt="Sponsored by Shin-ra Electric Power Company" /></a>
                 </section>
             </div>
-        </div>
+        </footer>
     )
 }
