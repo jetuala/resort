@@ -38,6 +38,7 @@ export default function Footer() {
             </div>
             <div className="footer-disclaimer">
                 <p>This site is for educational purposes only. All intellectual property presented here related to the Final Fantasy franchise is © Square Enix Co., Ltd.</p>
+                <p>Designed in part by John Smilga from <a href="https://youtu.be/LXJOvkVYQqA" target="_blank" rel="noopener noreferrer">In-Depth React Tutorial: Build a Hotel Reservation Site (with Contentful and Netlify)</a>. Additional design by Jonathan Tuala.</p>
             </div>
         </footer>
     )
