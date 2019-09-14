@@ -91,7 +91,7 @@ class RoomProvider extends Component {
     }
 
     handleCIChange = event => {
-        if (moment(event).isBefore(date)) {
+        if (moment(event).isBefore(date, 'day')) {
             alert("Check-in date cannot be sooner than today.");
         } else if (moment(event).isBefore(moment(this.state.coDate), 'day')) {
             this.setState({
@@ -125,13 +125,16 @@ class RoomProvider extends Component {
     };
 
     filterRooms = () => {
-        let { rooms, type, capacity, price, minSize, maxSize, breakfast, pets } = this.state;
+        let { rooms, ciDate, coDate, type, capacity, price, minSize, maxSize, breakfast, pets } = this.state;
         // destructuring from state because this is a callback under handleChange
         // all rooms
         let tempRooms = [...rooms];
         // transform the capacity & price values from string to number
         capacity = parseInt(capacity);
         price = parseInt(price);
+
+        // filter by date
+        // Gotta figure out Contentful structure first
 
         // filter by type
         if (type !== 'all') { 
