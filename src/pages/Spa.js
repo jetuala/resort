@@ -11,7 +11,7 @@ const Spa = () => {
     return (
         <>
             <StyledHero img={SpaBcg}>
-                <Banner title="Jasminum" subtitle="An oasis for your body, soul, and mind">
+                <Banner title="Sampaguita" subtitle="An oasis for your body, soul, and mind">
                     <Link to='/' className="btn-primary">
                         Return Home
                     </Link>

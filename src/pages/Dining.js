@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import DiningBcg from '../images/sunset-962156_1920.jpg';
 import Title from '../components/Title';
 import DinnerVideo from '../components/DinnerVideo'
+import YouTube from 'react-youtube';
 
 const Dining = () => {
     return (
